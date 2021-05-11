@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6ce5414a-2ce6-4361-95dd-4ed2948c4f07/deploy-status)](https://app.netlify.com/sites/chromatic-storybook/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

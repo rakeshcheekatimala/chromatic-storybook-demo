@@ -6,6 +6,8 @@ install:
 cache:
   directories:
     - node_modules
+branches:
+  only: main # 👈 Filters the execution to run only on the main branch
 before_deploy:
   - npm install netlify-cli -g
   - yarn build

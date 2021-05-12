@@ -7,7 +7,7 @@ cache:
   directories:
     - node_modules
 branches:
-  only: main # 👈 Filters the execution to run only on the main branch
+  only: main
 before_deploy:
   - npm install netlify-cli -g
   - yarn build
@@ -15,7 +15,7 @@ jobs:
   include:
     - stage: test
       script: yarn test
-    - name: 'Publish to Chromatic'
+    - stage: test
      script: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
     - stage: deploy
       script: netlify deploy --dir=dist --prod

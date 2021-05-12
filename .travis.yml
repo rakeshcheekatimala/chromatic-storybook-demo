@@ -1,21 +1,18 @@
 language: node_js
 node_js:
   - 12
-install:
-  - yarn
 cache:
   directories:
     - node_modules
-branches:
-  only: main
+script:
+  - yarn test
+  - yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
 before_deploy:
   - npm install netlify-cli -g
   - yarn build
-jobs:
-  include:
-    - stage: test
-      script: yarn test
-    - stage: test
-      script: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
-    - stage: deploy
-      script: netlify deploy --dir=dist --prod
+deploy:
+  provider: script
+  edge: true
+  script: netlify deploy --dir=dist --prod
+  on:
+    branch: master

@@ -16,6 +16,6 @@ jobs:
     - stage: test
       script: yarn test
     - stage: test
-     script: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
+      script: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
     - stage: deploy
       script: netlify deploy --dir=dist --prod
